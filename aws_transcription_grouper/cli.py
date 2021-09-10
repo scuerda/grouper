@@ -9,8 +9,8 @@ def main():
     parser = argparse.ArgumentParser()
  
     parser = argparse.ArgumentParser(description="Process AWS Transcripts...")
-    parser.add_argument("-i", "--input", type=str, help="JSON file from AWS")
-    parser.add_argument("-o", "--output", type=str, help="TXT file to output to")
+    parser.add_argument("-i", "--input", type=str, help="JSON file from AWS", required=True)
+    parser.add_argument("-o", "--output", type=str, help="TXT file to output to", required=True)
     args = parser.parse_args()
     parse_transcript(args.input, args.output)
     
