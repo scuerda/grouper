@@ -5,6 +5,7 @@ import tscribe
 import csv
 from itertools import groupby
 import tempfile
+import os
 
 
 def group_transcript(transcript_csv):
@@ -29,6 +30,8 @@ def output_grouped_transcript(grouped_rows, output):
             output.write("\n")
 
 def parse_transcript(json_file_path, output):
+    print(f"Loading {json_file_path}...")
     tscribe.write(json_file_path, format="csv", save_as="temp.csv")
     output_grouped_transcript(group_transcript("temp.csv"), output)
-
+    print(f"Work complete. Grouped transcript available at {output}!")
+    os.remove("temp.csv")
