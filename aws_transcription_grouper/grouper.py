@@ -1,3 +1,6 @@
+import warnings
+
+warnings.simplefilter(action='ignore', category=UserWarning)
 import tscribe
 import csv
 from itertools import groupby
