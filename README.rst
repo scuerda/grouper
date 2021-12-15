@@ -26,7 +26,49 @@ CLI wrapper for transforming AWS Transcribe JSON files into txt files grouped by
 Features
 --------
 
-* TODO
+Getting Started
+---------------
+
+Install `grouper` from a terminal window with `pip`.
+
+.. code-block:: bash
+
+    pip3 install -U aws-transcription-grouper
+
+
+To run `grouper`, use the following command.
+
+.. code-block:: bash
+
+    grouper AWS_TRANSCRIPTION_FILE.json
+
+
+By default, `grouper` will create a text file in the directory you ran the
+command in and will name the text file using the base name of the json file your
+provided. For example, the command above would produce a grouped output file
+named `AWS_TRANSCRIPTION_FILE.txt`. If you want to specify the output name, you
+can do so by using the `-o` or `--output` flag. For example:
+
+.. code-block:: bash
+
+    grouper AWS_TRANSCRIPTION_FILE.json -o important_conversation.txt
+
+or 
+
+.. code-block:: bash
+   
+   grouper AWS_TRANSCRIPTION_FILE.json -o important_conversation.txt
+
+If you do not provide an output file name and the default file name is already
+present, grouper will append a number. So running
+
+.. code-block:: bash
+
+   grouper AWS_TRANSCRIPTION_FILE.json
+   grouper AWS_TRANSCRIPTION_FILE.json
+
+will create both `AWS_TRANSCRIPTION.txt` and `AWS_TRANSCRIPTION_1.txt`.
+
 
 Credits
 -------
